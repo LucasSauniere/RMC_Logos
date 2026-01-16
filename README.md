@@ -13,6 +13,7 @@ Create stunning **Joy Division-style** topographic visualizations from real elev
 - 🌊 **Smart Masking** - Automatically skips lines/dots over sea level
 - 📊 **Scaling Factors** - Per-line elevation control for artistic effects
 - 🎭 **Halftone Style** - Retro newspaper/pop art aesthetic with sea masking
+- 🗺️ **GPX Track Overlay** - NEW: Superimpose GPS routes on your maps!
 - ⚡ **Ultra-Fast Rendering** - NEW: 10-50x faster halftone rendering!
 - 🚀 **High Performance** - Vectorized operations for high-resolution output
 - 📓 **Interactive Tutorials** - Jupyter notebooks included
@@ -97,6 +98,24 @@ generator.generate(
     size_km=15,
     scaling_factors=scaling,
     output_filename="alps_scaled.png"
+)
+
+# Overlay GPX track on halftone map (NEW!)
+generator.generate(
+    latitude=43.2965,
+    longitude=5.3698,
+    size_km=15,
+    resolution=150,
+    output_filename="hiking_trail.png",
+    format='halftone',
+    dot_size_range=(0.5, 8.0),
+    grid_spacing=10,
+    bg_color='#ffffff',
+    dot_color='#ff6900',
+    # GPX overlay
+    gpx_file="path/to/your/track.gpx",
+    gpx_color='#000000',
+    gpx_width=3.0
 )
 ```
 

@@ -7,3 +7,4 @@ srtm.py>=0.3.7
 requests>=2.31.0
 svgwrite>=1.4.3
 jupyterlab>=4.0.0
+gpxpy>=1.5.0

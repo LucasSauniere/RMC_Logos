@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Topographic Art Generator Example"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <trk>
+    <name>Sample Marseille Coastal Route</name>
+    <desc>Example hiking route along the Marseille coast</desc>
+    <trkseg>
+      <trkpt lat="43.290" lon="5.360"><ele>10</ele></trkpt>
+      <trkpt lat="43.292" lon="5.362"><ele>15</ele></trkpt>
+      <trkpt lat="43.294" lon="5.364"><ele>20</ele></trkpt>
+      <trkpt lat="43.296" lon="5.366"><ele>25</ele></trkpt>
+      <trkpt lat="43.298" lon="5.368"><ele>30</ele></trkpt>
+      <trkpt lat="43.300" lon="5.370"><ele>35</ele></trkpt>
+      <trkpt lat="43.302" lon="5.372"><ele>40</ele></trkpt>
+      <trkpt lat="43.304" lon="5.374"><ele>45</ele></trkpt>
+      <trkpt lat="43.306" lon="5.376"><ele>50</ele></trkpt>
+      <trkpt lat="43.308" lon="5.378"><ele>55</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
