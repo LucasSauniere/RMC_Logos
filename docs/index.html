@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate beautiful Joy Division-style ridge maps from real elevation data">
+    <title>RMC Ridge Map Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .gallery-item-content {
+            padding: 20px;
+        }
+        
+        .gallery-item h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .gallery-item p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 50px 0;
+            border-radius: 10px;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .button:hover {
+            transform: scale(1.05);
+        }
+        
+        .button-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        section {
+            margin: 60px 0;
+        }
+        
+        section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏔️ RMC Ridge Map Generator</h1>
+            <p>Create beautiful Joy Division-style ridge maps from real elevation data</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section>
+            <h2>✨ Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Worldwide Coverage</h3>
+                    <p>Generate maps for any location on Earth using real SRTM elevation data</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Fully Customizable</h3>
+                    <p>Choose colors, line density, styling, and more to create your perfect map</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📐</div>
+                    <h3>Vector Output</h3>
+                    <p>Export as SVG for infinite scalability - perfect for printing and logos</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🖨️</div>
+                    <h3>Print Ready</h3>
+                    <p>High-resolution output ready for posters, merchandise, and professional printing</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>🖼️ Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="gallery/marseille_ridgemap_classic.png" alt="Marseille Classic" onerror="this.src='https://via.placeholder.com/400x400/667eea/ffffff?text=Marseille+Classic'">
+                    <div class="gallery-item-content">
+                        <h3>Marseille - Classic</h3>
+                        <p>Black on white, timeless Joy Division style</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="gallery/marseille_ridgemap_neon.svg" alt="Marseille Neon" onerror="this.src='https://via.placeholder.com/400x400/00ff00/000000?text=Marseille+Neon'">
+                    <div class="gallery-item-content">
+                        <h3>Marseille - Neon</h3>
+                        <p>Neon green on black - perfect for tech logos</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="gallery/marseille_calanques_ridgemap.png" alt="Les Calanques" onerror="this.src='https://via.placeholder.com/400x400/00ffff/001f40?text=Les+Calanques'">
+                    <div class="gallery-item-content">
+                        <h3>Les Calanques</h3>
+                        <p>Cyan on dark blue - Mediterranean vibes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="cta">
+            <h2>Ready to Create Your Own?</h2>
+            <p style="margin-bottom: 30px;">Choose how you want to get started</p>
+            <a href="https://github.com/yourusername/Club_RMC" class="button">
+                📦 Download Package
+            </a>
+            <a href="https://share.streamlit.io/yourusername/club_rmc" class="button button-secondary">
+                🌐 Try Web App
+            </a>
+            <a href="https://mybinder.org/v2/gh/yourusername/Club_RMC/main" class="button button-secondary">
+                📓 Launch Notebook
+            </a>
+        </div>
+        
+        <section>
+            <h2>🚀 Quick Start</h2>
+            <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <h3>Installation</h3>
+                <pre style="background: #f5f5f5; padding: 20px; border-radius: 5px; overflow-x: auto;"><code>pip install rmclogo</code></pre>
+                
+                <h3 style="margin-top: 30px;">Basic Usage</h3>
+                <pre style="background: #f5f5f5; padding: 20px; border-radius: 5px; overflow-x: auto;"><code>from rmclogo import RidgeMap
+
+# Create a ridge map for Marseille
+rm = RidgeMap(bbox=(5.29, 43.22, 5.45, 43.37))
+values = rm.get_elevation_data(num_lines=80, elevation_pts=300)
+
+# Save as PNG
+fig, ax = plt.subplots(figsize=(12, 16))
+rm.plot_map(values=values, label='MARSEILLE', ax=ax)
+plt.savefig('marseille.png', dpi=300)
+
+# Or save as SVG
+rm.save_svg(
+    output_path='marseille.svg',
+    values=values,
+    label='MARSEILLE',
+    line_color='black',
+    background_color='#ffffff'
+)</code></pre>
+            </div>
+        </section>
+        
+        <section>
+            <h2>💡 Use Cases</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🎯 Logos & Branding</h3>
+                    <p>Create unique geographic logos for companies, events, or products</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🖼️ Art Prints</h3>
+                    <p>Beautiful wall art from your favorite mountains, cities, or landscapes</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>👕 Merchandise</h3>
+                    <p>T-shirts, mugs, stickers, and more with custom ridge maps</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📊 Presentations</h3>
+                    <p>Eye-catching geographic visualizations for talks and reports</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ using Python, matplotlib, and real elevation data</p>
+            <p style="margin-top: 10px;">
+                <a href="https://github.com/yourusername/Club_RMC">GitHub</a> • 
+                <a href="https://github.com/yourusername/Club_RMC/blob/main/docs">Documentation</a> • 
+                <a href="mailto:your.email@example.com">Contact</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                © 2026 RMC Ridge Map Generator • Open Source Project
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
